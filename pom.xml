@@ -15,6 +15,7 @@
         <selenium.version>3.11.0</selenium.version>
         <!-- Configurable variables -->
         <threads>1</threads>
+        <browser>firefox</browser>
 
     </properties>
 
@@ -47,6 +48,9 @@
                 <configuration>
                     <parallel>methods</parallel>
                     <threadCount>${threads}</threadCount>
+                    <systemProperties>
+                        <browser>${browser}</browser>
+                    </systemProperties>
                     <includes>
                         <include>**/*WD.java</include>
                     </includes>
