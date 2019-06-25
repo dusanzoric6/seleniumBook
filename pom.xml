@@ -16,10 +16,15 @@
         <!-- Configurable variables -->
         <threads>1</threads>
         <browser>firefox</browser>
-
+        <overwrite.binaries>false</overwrite.binaries>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>phantomjsdriver</artifactId>
+            <version>1.2.1</version>
+        </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
@@ -49,6 +54,7 @@
                     <parallel>methods</parallel>
                     <threadCount>${threads}</threadCount>
                     <systemProperties>
+                        <screenshotDirectory>${project.build.directory}/screenshots</screenshotDirectory>
                         <browser>${browser}</browser>
                     </systemProperties>
                     <includes>
